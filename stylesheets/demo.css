@@ -1,0 +1,111 @@
+
+.slack {
+    min-height: 400px;
+    font-family: 'Emoji Passthrough', Lato, appleLogo, sans-serif;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+}
+
+.slack .sidebar {
+    background-color: #4d394b;
+    color: #ab9ba9;
+    margin: 0px;
+    height: 400px;
+    float: left;
+    width: 200px;
+    padding: 5px;
+
+}
+
+.slack h3 {
+    font-size: 1.125em;
+    line-height: 1.375em;
+}
+
+.slack .sidebar h3 {
+    color: white;
+
+}
+
+.slack h4 {
+    font-size: 1.0em;
+    line-height: 1.125em;
+}
+
+.slack .messages {
+    height: 400px;
+    background-color: white;
+    padding: 5px 15px;
+    float:right;
+    width:665px;
+    color: #333;
+
+}
+
+.slack .stream {
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 15px;
+}
+
+.code {
+    clear: none;
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    background-color: #ffffdd;
+    border: 1px solid #ddddaa;
+    border-radius: 3px;
+    color: #999;
+    padding: 0px 4px;
+}
+
+.message {
+    text-shadow: none;
+    clear: both;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.message h1, h2, h3, h4, h5 {
+    color: #666;
+}
+
+.message h6 {
+    margin: 0px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    color: #333;
+}
+
+.message .time {
+    padding-left: 10px;
+    color: #aaa;
+}
+
+.message .thumb {
+    width: 48px;
+    height: 48px;
+    float: left;
+    padding-right: 5px;
+    border-radius: 3px;
+}
+
+.modal-body p {
+    font-size: 14px;
+}
+
+.stream a,
+.stream a:active,
+.stream a:visited,
+.stream a:link {
+    color: #0000FF;
+}
+
+.m-min {
+    margin-left: -30px;
+}
+
+.slack .messages pre {
+    color: #ddd;
+}
