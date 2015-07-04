@@ -1,0 +1,46 @@
+<div class="row m-t-xl" data-ng-controller="DashboardController">
+	<aside class="col-sm-3 col-md-2 col-xs-4 sidebar">
+		<accordion>
+			<accordion-group heading="Shortcuts" is-open="mainOpen">
+				<ul class="nav nav-pills nav-stacked">
+					<li><a ui-sref="app.graph.explorer"><i class="fa fa-user"></i> Explorer</a></li>
+					<li><a ui-sref="app.query.explorer"><i class="fa fa-user"></i> Search</a></li>
+				</ul>
+			</accordion-group>
+			<accordion-group heading="Members" is-open="membersOpen">
+				<ul class="nav nav-pills nav-stacked">
+					<li><a ui-sref="app.user.list"><i class="fa fa-user"></i> People</a></li>
+					<li><a ui-sref="app.account.list"><i class="fa fa-key"></i> Accounts</a></li>
+					<li><a ui-sref="app.teams.list"><i class="fa fa-group"></i> Teams</a></li>
+					<li><a ui-sref="app.hierarchy.explorer"><i class="fa fa-sitemap"></i> Hierarchy</a></li>
+				</ul>
+			</accordion-group>
+			<accordion-group is-open="objectsOpen">
+				<accordion-heading>
+					<a class="pull-right btn btn-xs btn-success" ui-sref="app.object.view">
+						<i class="fa fa-plus"></i>
+					</a>
+					Objects
+				</accordion-heading>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a ui-sref="app.type.list"><i class="fa fa-list"></i> Types</a></li>
+					<li><a ui-sref="app.entity.list"><i class="fa fa-list"></i> List</a></li>
+				</ul>
+			</accordion-group>
+			<accordion-group is-open="sourcesOpen">
+				<accordion-heading>
+					Sources
+				</accordion-heading>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a ui-sref="app.sources.list"><i class="fa fa-key"></i> Providers</a></li>
+					<li><a ui-sref="app.jobs.list"><i class="fa fa-play-circle"></i> Jobs</a></li>
+				</ul>
+			</accordion-group>
+		</accordion>
+	</aside>
+	<div class="col-sm-9 col-md-10 col-xs-8 main-column">
+		<ui-breadcrumbs displayname-property="data.label" template-url="/lib/angular-utils-ui-breadcrumbs/uiBreadcrumbs.tpl.html"
+						abstract-proxy-property="data.breadcrumbProxy"></ui-breadcrumbs>
+		<div ui-view></div>
+	</div>
+</div>

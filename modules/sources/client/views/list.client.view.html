@@ -1,0 +1,52 @@
+<div class="panel panel-default" data-ng-controller="ApiIntegrationsContoller">
+	<div class="panel-body">
+		<table class="table table-stripped">
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Provider</th>
+				<th>Client ID</th>
+				<th>Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					<input class="form-control" data-ng-model="new.name"/>
+				</td>
+				<td>
+					<select class="form-control" data-ng-model="new.provider"
+							data-ng-options="k as v for (k, v) in providers">
+					</select>
+				</td>
+				<td>
+					<input class="form-control" data-ng-model="new.clientID"/>
+				</td>
+				<td>
+					<button class="btn btn-success" data-ng-click="create()">
+						<i class="fa fa-plus"></i>
+						Create
+					</button>
+				</td>
+			</tr>
+			<tr data-ng-repeat="item in apiIntegrations.items">
+				<td>
+					{{ item.name }}
+				</td>
+				<td>
+					{{ providers[item.provider] }}
+				</td>
+				<td>
+					{{ item.clientID }}
+				</td>
+				<td>
+					<a ui-sref="app.sources.edit({integrationId : item._id })" class="btn btn-default">
+						<i class="fa fa-edit"></i>
+						Edit
+					</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

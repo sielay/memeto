@@ -1,0 +1,23 @@
+<div class="panel panel-default" data-ng-controller="EntitiesController">
+	<div class="panel-heading">
+		<h3 class="panel-title">Entities</h3>
+	</div>
+	<div class="panel-body">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Icon</th>
+					<th>Parent</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="entity in entities">
+					<td data-ng-bind="entity.name"></td>
+					<td data-ng-bind="entity.type.icon"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

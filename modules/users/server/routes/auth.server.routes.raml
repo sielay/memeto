@@ -1,0 +1,60 @@
+#%RAML 0.8
+
+title: User Auth Module Routes
+version: v1
+
+
+
+/api/auth/signup:
+  post:
+    description: Registers new user
+    responses:
+      400:
+      200:
+
+/api/auth/signout:
+  get:
+    description: Logs out user
+    responses:
+      200:
+
+/api/auth/signin:
+  post:
+    description: Logs in user
+    responses:
+      400:
+      200:
+
+
+/api/auth/{oauthProvider}:
+  get:
+    description: Redirects to OAuth provider login
+    responses:
+      400:
+      200:
+
+/api/auth/{oauthProvider}/callback:
+  get:
+    description: Recieves OAuth provider login response
+
+
+/api/auth:
+  get:
+    description: List available auth providers
+    responses:
+      200:
+
+/api/auth/forgot:
+  post:
+    responses:
+      400:
+      200:
+
+/api/auth/reset/{token}:
+  get:
+    responses:
+      200:
+  post:
+    responses:
+      200:
+      400:

@@ -1,0 +1,16 @@
+On branch 0.1.0
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   modules/core/client/views/home.client.view.html
+	modified:   modules/users/server/config/strategies/test.js
+	modified:   npm-licences.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	docs/codecoverage.png
+	modules/core/client/img/brand/
+
+no changes added to commit (use "git add" and/or "git commit -a")

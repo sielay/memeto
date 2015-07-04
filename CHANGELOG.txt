@@ -1,0 +1,9 @@
+# Changelog
+
+## 2015 June 18
+
+ * Licenses
+ * Istanbul integration
+ * CRUD express extension
+ * Imported bower dependencies
+ * Remove chat and articles modules

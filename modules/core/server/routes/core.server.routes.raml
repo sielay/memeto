@@ -1,0 +1,24 @@
+#%RAML 0.8
+
+title: Core Module Routes
+version: v1
+/server-error:
+  get:
+    responses:
+      500:
+        body:
+          text/html:
+/not-found:
+  get:
+    responses:
+      404:
+        body:
+          text/html:
+
+/:
+  get:
+    responses:
+      200:
+
+/*:
+  get:

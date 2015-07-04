@@ -1,0 +1,46 @@
+#%RAML 0.8
+
+title: Article Module Routes
+version: v1
+
+/api/users/me:
+  get:
+    description: Get currently logged in user profile
+    responses:
+      403:
+      200:
+
+/api/users/{userId}:
+  get:
+    description: Gets one user objct
+    responses:
+      403:
+      400:
+      200:
+
+/api/users:
+  put:
+  get:
+    description: Gets list of users
+    responses:
+      200:
+      403:
+
+/api/users/accounts:
+  delete:
+    description: Removes oauth accounts
+    responses:
+      200:
+      400:
+      403:
+
+/api/users/password:
+  post:
+    description: Changes password
+    responses:
+        200:
+        400:
+        403:
+
+/api/users/picture:
+  post:

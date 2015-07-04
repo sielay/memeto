@@ -1,0 +1,64 @@
+<div class="panel panel-default" data-ng-controller="JobsController">
+	<div class="panel-body">
+		<job-runner></job-runner>
+		<progressbar class="progress-striped active" value="progress" max="total" type="info">{{ progress}} / {{ total }}</progressbar>
+		<table class="table table-stripped">
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Integration</th>
+				<th>Resource</th>
+				<th>Recurrent</th>
+				<th>Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					<input class="form-control" data-ng-model="new.name"/>
+				</td>
+				<td>
+					<input type="text" ng-model="new.integration" placeholder="Type integration name"
+						   typeahead="integration as integration.label for integration in getIntegrations($viewValue)"
+						   typeahead-loading="loadingLocations" class="form-control">
+				</td>
+				<td>
+					<input class="form-control" data-ng-model="new.clientID"/>
+				</td>
+				<td>
+					<input class="form-control" type="checkbox" data-ng-model="new.recurrent"/>
+				</td>
+				<td>
+					<button class="btn btn-success" data-ng-click="create()">
+						<i class="fa fa-plus"></i>
+						Create
+					</button>
+				</td>
+			</tr>
+			<tr data-ng-repeat="item in jobs.items">
+				<td>
+					{{ item.name }}
+				</td>
+				<td>
+					<i class="fa fa-{{ item.integration.provider }}"></i>
+					{{ item.integration.name }}
+				</td>
+				<td>
+					{{ item.resourceURI }}
+				</td>
+				<td>
+					{{ item.recurrent }}
+				</td>
+				<td>
+					<a ui-sref="app.jobs.edit({jobId : item._id })" class="btn btn-default">
+						<i class="fa fa-edit"></i>
+					</a>
+					<button class="btn btn-default" data-ng-click="run(item)">
+						<i class="fa fa-play-circle"></i>
+					</button>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

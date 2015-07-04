@@ -1,0 +1,58 @@
+#%RAML 0.8
+
+title: Api Integration REST API
+version: v1
+
+/api/integration:
+  get:
+    description: List all registered integrations
+    responses:
+      200:
+      403:
+  post:
+    description: Insert new integration
+    responses:
+      200:
+        body:
+          application/json:
+            schema: |
+              { "$schema": "http://json-schema.org/schema",
+                "type": "object",
+                "properties": {
+                  "name":  { "type": "string" },
+                  "provider":  { "type": "string" },
+                  "clientID":  { "type": "string" },
+                  "clientSecret":  { "type": "string" },
+                  "_id": { "type": "string" }
+                },
+                "required": [ "_id" ]
+              }
+      403:
+      400:
+
+/api/integration/providers:
+  get:
+    description: Get providers
+    responses:
+      200:
+      403:
+
+
+/api/integration/{integrationId}:
+  get:
+    description: Get specific integration
+    responses:
+      200:
+      404:
+      403:
+  put:
+    description: Update specific integraiton
+    responses:
+      200:
+      404:
+      403:
+  delete:
+    description: Delete integration
+    responses:
+      200:
+      403:

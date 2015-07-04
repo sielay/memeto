@@ -1,0 +1,237 @@
+#%RAML 0.8
+title: Memeto API
+
+/server-error:
+  get:
+    responses:
+      500:
+        body:
+          text/html:
+/not-found:
+  get:
+    responses:
+      404:
+        body:
+          text/html:
+/:
+  get:
+    responses:
+      200:
+/*:
+  get:
+/api/graph/entity:
+  post:
+    description: 'Insert'
+    responses:
+      200:
+        body:
+          application/json:
+            schema:
+      403:
+  get:
+    description: 'Query'
+    responses:
+      200:
+        body:
+          application/json:
+            schema:
+      403:
+/api/graph/entity/{rid}:
+  get:
+    description: 'Gets one Entity'
+    responses:
+      200:
+        body:
+          application/json:
+            schema:
+      403:
+      404:
+  put:
+    description: 'Updates Entity'
+    responses:
+      200:
+        body:
+          application/json:
+            schema:
+      400:
+      403:
+      404:
+  post:
+    description: 'Add link'
+    responses:
+      200:
+      400:
+      403:
+      404:
+      500:
+  delete:
+    description: 'Deletes Entity'
+    responses:
+      200:
+        body:
+          application/json:
+      404:
+/api/graph/type:
+  post:
+    description: 'Insert'
+    responses:
+      200:
+        body:
+          application/json:
+            schema:
+      400:
+      403:
+  get:
+    description: 'Query'
+    responses:
+      200:
+        body:
+          application/json:
+            schema:
+      403:
+/api/graph/type/{typeId}:
+  get:
+    description: 'Gets one Type'
+    responses:
+      200:
+        body:
+          application/json:
+            schema:
+      403:
+      404:
+  put:
+    description: 'Updates Type'
+    responses:
+      200:
+        body:
+          application/json:
+            schema:
+      400:
+      403:
+      404:
+  delete:
+    description: 'Deletes Entity'
+    responses:
+      200:
+        body:
+          application/json:
+      404:
+/api/integration:
+  get:
+    description: 'List all registered integrations'
+    responses:
+      200:
+      403:
+  post:
+    description: 'Insert new integration'
+    responses:
+      200:
+        body:
+          application/json:
+            schema:
+      400:
+      403:
+/api/integration/providers:
+  get:
+    description: 'Get providers'
+    responses:
+      200:
+      403:
+/api/integration/{integrationId}:
+  get:
+    description: 'Get specific integration'
+    responses:
+      200:
+      403:
+      404:
+  put:
+    description: 'Update specific integraiton'
+    responses:
+      200:
+      403:
+      404:
+  delete:
+    description: 'Delete integration'
+    responses:
+      200:
+      403:
+/api/auth/signup:
+  post:
+    description: 'Registers new user'
+    responses:
+      200:
+      400:
+/api/auth/signout:
+  get:
+    description: 'Logs out user'
+    responses:
+      200:
+/api/auth/signin:
+  post:
+    description: 'Logs in user'
+    responses:
+      200:
+      400:
+/api/auth/{oauthProvider}:
+  get:
+    description: 'Redirects to OAuth provider login'
+    responses:
+      200:
+      400:
+/api/auth/{oauthProvider}/callback:
+  get:
+    description: 'Recieves OAuth provider login response'
+/api/auth:
+  get:
+    description: 'List available auth providers'
+    responses:
+      200:
+/api/auth/forgot:
+  post:
+    responses:
+      200:
+      400:
+/api/auth/reset/{token}:
+  get:
+    responses:
+      200:
+  post:
+    responses:
+      200:
+      400:
+/api/users/me:
+  get:
+    description: 'Get currently logged in user profile'
+    responses:
+      200:
+      403:
+/api/users/{userId}:
+  get:
+    description: 'Gets one user objct'
+    responses:
+      200:
+      400:
+      403:
+/api/users:
+  put:
+  get:
+    description: 'Gets list of users'
+    responses:
+      200:
+      403:
+/api/users/accounts:
+  delete:
+    description: 'Removes oauth accounts'
+    responses:
+      200:
+      400:
+      403:
+/api/users/password:
+  post:
+    description: 'Changes password'
+    responses:
+      200:
+      400:
+      403:
+/api/users/picture:
+  post:

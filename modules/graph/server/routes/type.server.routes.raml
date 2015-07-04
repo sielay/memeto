@@ -1,0 +1,90 @@
+#%RAML 0.8
+
+title: Type REST API
+version: v1
+
+/api/graph/type:
+    post:
+      description: Insert
+      responses:
+        403:
+        400:
+        200:
+          body:
+            application/json:
+              schema: |
+                { "$schema": "http://json-schema.org/schema",
+                  "type": "object",
+                  "properties": {
+                    "name":  { "type": "string" },
+                    "id": { "type": "string" }
+                  },
+                  "required": [ "id" ]
+                }
+    get:
+      description: Query
+      responses:
+        403:
+        200:
+          body:
+            application/json:
+              schema: |
+                { "$schema": "http://json-schema.org/schema",
+                  "type": "array",
+                  "item" : {
+                    "type" : [{
+                      "type": "object",
+                      "properties": {
+                        "name":  { "type": "string" },
+                        "id": { "type": "string" }
+                      },
+                      "required": [ "id" ]
+                    }]
+                  }
+                }
+
+/api/graph/type/{typeId}:
+  get:
+    description: Gets one Type
+    responses:
+      403:
+      404:
+      200:
+        body:
+          application/json:
+            schema: |
+              { "$schema": "http://json-schema.org/schema",
+                "type": "object",
+                "properties": {
+                  "name":  { "type": "string" },
+                  "id": { "type": "string" }
+                },
+                "required": [ "id" ]
+              }
+
+  put:
+    description: Updates Type
+    responses:
+      400:
+      403:
+      404:
+      200:
+        body:
+          application/json:
+            schema: |
+              { "$schema": "http://json-schema.org/schema",
+                "type": "object",
+                "properties": {
+                  "name":  { "type": "string" },
+                  "id": { "type": "string" }
+                },
+                "required": [ "id" ]
+              }
+  delete:
+    description: Deletes Entity
+    responses:
+      404:
+      200:
+        body:
+          application/json:
+

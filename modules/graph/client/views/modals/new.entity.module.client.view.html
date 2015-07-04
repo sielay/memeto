@@ -1,0 +1,43 @@
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">Add Asset</h3>
+	</div>
+	<div class="modal-body">
+		<tabset>
+			<tab heading="New Asset">
+				<dl class="m-t">
+					<dt>Type</dt>
+					<dd>
+						<input type="text" ng-model="selected" placeholder="Type object type name"
+							   typeahead="type as type.name for type in getTypes($viewValue)"
+							   typeahead-loading="loadingLocations" class="form-control input-lg"
+								>
+						<i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+					</dd>
+				</dl>
+				<dl>
+					<dt>Name</dt>
+					<dd>
+						<input type="text" ng-model="name" class="form-control input-lg"/>
+					</dd>
+				</dl>
+			</tab>
+			<tab heading="Existing Asset">
+				<dl class="m-t">
+					<dt>Asset Name</dt>
+					<dd>
+						<input type="text" ng-model="asset" placeholder="Type object name"
+							   typeahead="object as object.name for object in getObjects($viewValue)"
+							   typeahead-loading="loadingLocations" class="form-control input-lg"
+								>
+						<i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+					</dd>
+				</dl>
+			</tab>
+		</tabset>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="ok()">OK</button>
+		<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	</div>
+</div>

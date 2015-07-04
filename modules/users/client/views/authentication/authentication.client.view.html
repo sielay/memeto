@@ -1,0 +1,16 @@
+<section class="content container" data-ng-controller="ExternalAuthenticationController">
+	<div class="panel panel-default" ng-show="integrations.length > 0">
+		<div class="panel-heading">
+			<h3 class="panel-title">Sign in using your social accounts</h3>
+		</div>
+
+		<div class="panel-body">
+			<a data-ng-repeat="integration in integrations"
+			   class="btn btn-block btn-social btn-{{integration.provider}} undecorated-link"
+			   href="/api/auth/{{integration.name}}">
+				<i class="fa fa-{{integration.provider}}"></i> Sign in with {{ integration.name}}
+			</a>
+		</div>
+	</div>
+	<div ui-view></div>
+</section>
